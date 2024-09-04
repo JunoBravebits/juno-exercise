@@ -351,6 +351,7 @@
         "text_EKFAac": {
           "type": "text",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_29.png",
             "productName": "Product Name",
             "price": "40.00"
           }
@@ -358,6 +359,7 @@
         "text_dXUFyY": {
           "type": "text",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_29_1.png",
             "productName": "Product Name",
             "price": "40.00"
           }
@@ -365,6 +367,7 @@
         "text_7NnrFQ": {
           "type": "text",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_29_2.png",
             "productName": "Product Name",
             "price": "40.00"
           }
@@ -372,6 +375,7 @@
         "text_gzHRAd": {
           "type": "text",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_29_3.png",
             "productName": "Product Name",
             "price": "40.00"
           }
