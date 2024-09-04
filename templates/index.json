@@ -232,16 +232,19 @@
         "slider_DPEAnz": {
           "type": "slider",
           "settings": {
+            "image": "shopify:\/\/shop_images\/slide-1.png"
           }
         },
         "slider_iXTyik": {
           "type": "slider",
           "settings": {
+            "image": "shopify:\/\/shop_images\/slide-2.png"
           }
         },
         "slider_9HhhW6": {
           "type": "slider",
           "settings": {
+            "image": "shopify:\/\/shop_images\/slide-3.png"
           }
         }
       },
