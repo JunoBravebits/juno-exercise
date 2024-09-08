@@ -25,8 +25,19 @@
     margin-bottom: 30px;
   }
 
-  .accessories__item-image {
+  .accessories__item-image-box {
+    padding: 30px;
+    border: 1px solid #CECECE;
     margin-bottom: 30px;
+    border-radius: 5px;
+  }
+
+  .accessories__item-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    padding-bottom: 100%;
   }
 
   .accessories__item-label {

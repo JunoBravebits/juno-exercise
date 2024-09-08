@@ -4,25 +4,27 @@
 
 {%- endstyle -%}
 
-<section class="our-features p-component">
-  <div class="container our-features__container">
-    <div class="our-features__image">
-      <img src="{{ section.settings.image | image_url }}" alt=""/>
-    </div>
-    <div class="our-features__content">
-      <div class="our-features__label label">{{ section.settings.label }}</div>
-      <div class="our-features__title title">{{ section.settings.title }}</div>
-        <div class="our-features__technology">
-      {%- for block in section.blocks -%}
-          <div class="our-features__technology-wrap" >
-            <div class="our-features__technology-image">
-              <img src="{{ block.settings.image | image_url }}" alt=""/>
+<section class="our-features">
+  <div class="container">
+    <div class="our-features__container">
+      <div class="our-features__image">
+        <img src="{{ section.settings.image | image_url }}" alt=""/>
+      </div>
+      <div class="our-features__content">
+        <div class="our-features__label label">{{ section.settings.label }}</div>
+        <div class="our-features__title title">{{ section.settings.title }}</div>
+          <div class="our-features__technology">
+        {%- for block in section.blocks -%}
+            <div class="our-features__technology-wrap" >
+              <div class="our-features__technology-image">
+                <img src="{{ block.settings.image | image_url }}" alt=""/>
+              </div>
+              <div class="our-features__technology-title">{{ block.settings.title }}</div>
+              <div class="our-features__technology-desc">{{ block.settings.desc }}</div>
             </div>
-            <div class="our-features__technology-title">{{ block.settings.title }}</div>
-            <div class="our-features__technology-desc">{{ block.settings.desc }}</div>
+        {%- endfor -%}
           </div>
-      {%- endfor -%}
-        </div>
+      </div>
     </div>
   </div>
 </section>

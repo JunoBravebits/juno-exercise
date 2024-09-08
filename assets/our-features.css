@@ -2,24 +2,32 @@
   .our-features__container {
     display: flex;
     align-items: center;
-    gap: 20px;
+    /* gap: 20px; */
+    padding: 99px 0;
+    border-top: 1px solid #ECECEC;
+    border-bottom: 1px solid #ECECEC;
   }
 
   .our-features__label {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .our-features__title{
-    padding-bottom: 40px;
+    margin-bottom: 40px;
   }
 
-  .our-features__image,
+  .our-features__image {
+    width: 50%;
+  }
+
   .our-features__content {
     width: 50%;
+    padding-left: 15px;
   }
 
   .our-features__image {
     max-width: 470px;
+    padding: 20px;
     margin-right: auto;
   }
 
@@ -33,14 +41,14 @@
     max-width: 180px;
     width: 100%;
     text-align: center;
-    padding: 20px 5px 30px;
+    padding: 19px 5px 29px;
     border: 1px solid #ECECEC;
     border-radius: 10px;
   }
 
   .our-features__technology-image {
     max-width: 70px;
-    margin: auto;
+    margin: 0 auto 20px;
   }
 
   .our-features__technology-title {
