@@ -31,8 +31,9 @@
     }
 
     .awards__image {
-      max-width: 346px;
+      max-width: 345px;
       width: 100%;
+      aspect-ratio: 345 / 167;
     }
   }
 }

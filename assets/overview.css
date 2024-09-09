@@ -50,15 +50,16 @@
     }
 
     .overview__title {
-      padding-bottom: 20px;
+      margin-bottom: 20px;
     }
 
     .overview__desc {
-      padding-bottom: 30px;
+      margin-bottom: 30px;
+      line-height: 30.5px;
     }
 
     .overview__info {
-      padding-bottom: 50px;
+      margin-bottom: 50px;
     }
 
     .overview__image {
@@ -69,6 +70,10 @@
   @media screen and (max-width: 576px) {
     .overview__image {
       max-width: 100%;
+      
+      img {
+        padding: 30px;
+      }
     }
 
     .overview__info {
@@ -78,6 +83,7 @@
         width: 100%;
         padding-right: 0;
         margin-bottom: 22px;
+        align-items: end;
       }
 
       .overview__info-item:last-child {

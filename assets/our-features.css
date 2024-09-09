@@ -83,21 +83,24 @@
   @media screen and (max-width: 767px) {
     .our-features__container {
       display: block;
+      padding: 40px 0;
     }
 
-    .our-features__image,
     .our-features__content {
       width: 100%;
+      padding-left: 0;
     }
 
     .our-features__image {
+      width: 100%;
       max-width: 370px;
-      margin: auto;
-      padding-bottom: 30px;
+      margin: 0 auto 30px;
+      aspect-ratio: 345 / 345;
+      padding-top: 30px;
     }
 
     .our-features__title{
-      padding-bottom: 55px;
+      margin-bottom: 55px;
     }
   }
 

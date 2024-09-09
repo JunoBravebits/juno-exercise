@@ -9,7 +9,8 @@
   <section class="product p-component">
     <div class="container product__container">
       <div class="product__gallery">
-        <div class="gallery__image">
+        <div class="gallery__container">
+            <div class="gallery__image"></div>
         </div>
         <div class="gallery__list">
           {%- for image in selected_product.images -%}
@@ -83,12 +84,10 @@
         <div class="product__cart">
           <div class="product__quantity">
             <span class="product__add-to-cart subtraction">-</span>
-            <span>1</span>
+            <span class="quantity">1</span>
             <span class="product__add-to-cart addition">+</span>
           </div>
-          <div class="product__button">
-            <a href="javascript:void(0)">Add to cart</a>
-          </div>
+          {% render 'add-to-card' %}
         </div>
         <div class="product__desc">{{ selected_product.description }}</div>
         {%- if section.settings.video != blank -%}
@@ -109,7 +108,15 @@
   document.addEventListener('DOMContentLoaded', () => {
     const galleryItems = document.querySelectorAll('.gallery__list-item img');
     const imageHolder = document.querySelector('.gallery__image');
-    
+
+    const quantityDisplay = document.querySelector('.quantity');
+    document.querySelectorAll('.product__add-to-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        let quantity = parseInt(quantityDisplay.textContent);
+        quantity += button.classList.contains('addition') ? 1 : -1;
+        quantityDisplay.textContent = Math.max(quantity, 1);
+      });
+    });
     // Set initial image source if not already set
     if (!imageHolder.getAttribute('style')) {
       

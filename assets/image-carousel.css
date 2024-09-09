@@ -18,9 +18,9 @@
         color: white;
         position: absolute;
         top: 50%;
-        max-width: 200px;
         margin: auto;
         text-align: center;
+        transform: translateY(-50%);
       }
     }
   }
@@ -38,15 +38,16 @@
 
       .image-carousel__carousel {
         position: absolute;
-        padding-top: 187px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         text-align: unset;
         visibility: hidden;
         transition-duration: 0.3s;
         transition-property: visibility;
         left: 0;
+        height: 100%;
       }
 
       .image-carousel__carousel.show {
@@ -88,7 +89,7 @@
       .image-carousel__pagination {
         position: absolute;
         z-index: 10;
-        bottom: 186px;
+        bottom: 181px;
         left: 50%;
         transform: translateX(-50%);
       }
@@ -124,6 +125,8 @@
 
         .image-carousel__carousel-desc {
           padding-bottom: 40px;
+          font-size: 20px;
+          line-height: 35px;
         }
       }
     }
@@ -172,10 +175,12 @@
 
         .image-carousel__carousel {
           padding: 0 15px;
+          height: unset;
+          justify-content: unset;
         }
 
         .image-carousel__pagination {
-          bottom: 40px;
+          bottom: 33px;
         }
       }
     }
