@@ -55,6 +55,7 @@
     margin-right: 10px;
     justify-content: space-between;
     width: 120px;
+    height: 100%;
     align-items: center;
     padding: 0px 10px;
     border: 1px solid #ECECEC;
@@ -69,6 +70,7 @@
     padding: 8px;
     font-size: 20px;
     border-radius: 5px;
+    cursor: pointer;
   }
 
   .product__add-to-cart:active {

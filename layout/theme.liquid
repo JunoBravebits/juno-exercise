@@ -98,6 +98,7 @@
       }
 
       :root {
+        --text-color: {{ settings.type_body_font.family }},2345
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
@@ -130,6 +131,7 @@
         --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
         --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
         --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
+
         --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
         --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
         --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;

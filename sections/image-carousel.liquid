@@ -1,45 +1,42 @@
 {{ 'image-carousel.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-{%- endstyle -%}
-
-<section class="image-carousel" data-slider="Slider">
+<div class="image-carousel">
   <div class="image">
     <div class="image-carousel__image" style="background-image: url({{ section.settings.image | image_url }})">
       <div class="image-carousel__image-title title">{{ section.settings.title }}</div>
     </div>
   </div>
-
+      
   <div class="carousel">
-    <div class="image-carousel__content js-slider-content">
-      {%- for block in section.blocks -%}
-        <div class="image-carousel__carousel js-slider-item">
-          <div class="image-carousel__carousel-avatar">
-            <img src="{{ block.settings.avatar | image_url }}" alt=""/>
-          </div>
-          <div class="image-carousel__carousel-label">{{ block.settings.label }}</div>
-          <div class="image-carousel__carousel-desc description">{{ block.settings.desc }}</div>
+      <custom-slider>
+        <div class="image-carousel__content js-slider-content">
+          {%- for block in section.blocks -%}
+            <div class="image-carousel__carousel js-slider-item">
+              <div class="image-carousel__carousel-avatar">
+                <img src="{{ block.settings.avatar | image_url }}" alt=""/>
+              </div>
+              <div class="image-carousel__carousel-label">{{ block.settings.label }}</div>
+              <div class="image-carousel__carousel-desc description">{{ block.settings.desc }}</div>
+            </div>
+          {%- endfor -%}
+
+          <button class="prev js-btn-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <rect width="60" height="60" rx="5" transform="matrix(-1 0 0 1 60 0)" fill="black" fill-opacity="0.5"/>
+              <path d="M34 22L25 30L34 38" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="next js-btn-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <rect width="60" height="60" rx="5" fill="black" fill-opacity="0.5"/>
+              <path d="M26 22L35 30L26 38" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class= "image-carousel__pagination js-pagination"></div>
         </div>
-      {%- endfor -%}
-
-      <button class="prev">
-        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-          <rect width="60" height="60" rx="5" transform="matrix(-1 0 0 1 60 0)" fill="black" fill-opacity="0.5"/>
-          <path d="M34 22L25 30L34 38" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <button class="next">
-        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-          <rect width="60" height="60" rx="5" fill="black" fill-opacity="0.5"/>
-          <path d="M26 22L35 30L26 38" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-      <div class= "image-carousel__pagination js-pagination"></div>
+      </custom-slider>
     </div>
-  </div>
-</section>
-
-<script src="{{ 'slider.js' | asset_url }}"></script>
+</div>
 
 {% schema %}
 {

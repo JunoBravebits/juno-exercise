@@ -7,7 +7,7 @@
 
 {%- endstyle -%}
 
-<section class="masthead" style="background-image: url({{ section.settings.image | image_url }});">
+<div class="masthead" style="background-image: url({{ section.settings.image | image_url }});">
   <div class="masthead__container">
     <div class="masthead__title">{{ section.settings.title }}</div>
     <div class="arrows">
@@ -22,7 +22,7 @@
       </svg>
     </div>
   </div>
-</section>
+</div>
 
 {% schema %}
 {

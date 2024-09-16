@@ -6,19 +6,21 @@
 
 {% assign selected_product = all_products[section.settings.product] %}
 {%- if selected_product != blank -%}
-  <section class="product p-component">
+  <div class="product p-component">
     <div class="container product__container">
       <div class="product__gallery">
-        <div class="gallery__container">
-            <div class="gallery__image"></div>
-        </div>
-        <div class="gallery__list">
-          {%- for image in selected_product.images -%}
-            <div class="gallery__list-item">
-              <img src="{{ image | img_url }}" alt="{{ selected_product.title }}">
-            </div>
-          {%- endfor -%}
-        </div>
+        <product-gallery>
+          <div class="gallery__container">
+            <div class="gallery__image js-image"></div>
+          </div>
+          <div class="gallery__list">
+            {%- for image in selected_product.images -%}
+              <div class="gallery__list-item js-gallery-item">
+                <img src="{{ image | img_url }}" alt="{{ selected_product.title }}">
+              </div>
+            {%- endfor -%}
+          </div>
+        </product-gallery>
       </div>
 
       <div class="product__content">
@@ -82,11 +84,13 @@
           </div>
         </div>
         <div class="product__cart">
-          <div class="product__quantity">
-            <span class="product__add-to-cart subtraction">-</span>
-            <span class="quantity">1</span>
-            <span class="product__add-to-cart addition">+</span>
-          </div>
+          <product-quantity>
+            <div class="product__quantity">
+              <span class="product__add-to-cart subtraction js-btn-quantity">-</span>
+              <span class="quantity js-quantity">1</span>
+              <span class="product__add-to-cart addition js-btn-quantity">+</span>
+            </div>
+          </product-quantity>
           {% render 'add-to-card' %}
         </div>
         <div class="product__desc">{{ selected_product.description }}</div>
@@ -99,46 +103,10 @@
         </div>
         {%- endif -%}
       </div>
-
     </div>
-  </section>
+  </div>
 {%- endif -%}
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const galleryItems = document.querySelectorAll('.gallery__list-item img');
-    const imageHolder = document.querySelector('.gallery__image');
-
-    const quantityDisplay = document.querySelector('.quantity');
-    document.querySelectorAll('.product__add-to-cart').forEach(button => {
-      button.addEventListener('click', () => {
-        let quantity = parseInt(quantityDisplay.textContent);
-        quantity += button.classList.contains('addition') ? 1 : -1;
-        quantityDisplay.textContent = Math.max(quantity, 1);
-      });
-    });
-    // Set initial image source if not already set
-    if (!imageHolder.getAttribute('style')) {
-      
-      imageHolder.style.backgroundImage = `url(${galleryItems[0].getAttribute('src').replace('_small','')})`;
-      
-      galleryItems[0].classList.add('active');
-    }
-
-    galleryItems.forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        if (!item.classList.contains('active')) {
-          galleryItems.forEach(el => el.classList.remove('active'));
-          item.classList.add('active');
-          const imgSrc = item.getAttribute('src').replace('_small','');
-          imageHolder.style.backgroundImage = `url(${imgSrc})`;
-        }
-      });
-    });
-  });
-</script>
 {% schema %}
 {
   "name": "Product",
