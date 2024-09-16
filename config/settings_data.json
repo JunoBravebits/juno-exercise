@@ -129,6 +129,14 @@
     "content_for_index": [
 
     ],
+    "blocks": {
+      "1986737046835575827": {
+        "type": "shopify:\/\/apps\/az-google-font-custom-fonts\/blocks\/arc_fontify_block-app-embed\/e720f1f7-5778-4825-85a3-3572dbcf27c4",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {
